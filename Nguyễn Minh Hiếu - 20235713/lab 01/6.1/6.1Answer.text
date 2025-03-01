@@ -1,0 +1,6 @@
+1:
+Khi người dùng nhấp vào nút "Cancel" trong Hiển thị showConfirmDialog box, các lựa chọn biến sẽ được gán giá trị JOptionPane.CANCEL_OPTION
+
+Bởi vì mã của bạn chỉ kiểm tra option == JOptionPane, tùy chọn "Cancel" sẽ rơi vào nhánh khác của toán tử ba ngôi. Kết quả là hộp thoại thông báo sẽ hiển thị đầu ra "No".
+2:
+Sử dụng String[] options = {"Yes","No"};
