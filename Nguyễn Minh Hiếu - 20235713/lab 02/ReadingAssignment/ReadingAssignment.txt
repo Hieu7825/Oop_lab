@@ -1,0 +1,14 @@
+Answer:
+Các phương thức truy cập (accessor methods), thường được gọi là getter và setter, thường được sử dụng trong lập trình hướng đối tượng để truy cập và sửa đổi các thuộc tính của một đối tượng. Tuy nhiên, việc sử dụng chúng cần được cân nhắc kỹ lưỡng dựa trên phạm vi truy cập và yêu cầu thiết kế của lớp.
+
+Đối với các lớp công khai (public class)
+Trong các lớp công khai, nên sử dụng phương thức truy cập thay vì cho phép truy cập trực tiếp vào các thuộc tính. Cách tiếp cận này giúp bảo toàn tính đóng gói (encapsulation), cho phép thay đổi cách triển khai nội bộ của lớp mà không ảnh hưởng đến giao diện công khai (public API). Nếu để lộ trực tiếp các thuộc tính trong các lớp công khai, việc kiểm soát dữ liệu sẽ bị mất, gây khó khăn trong việc thực thi các quy tắc ràng buộc hoặc thực hiện các hành động bổ sung khi một thuộc tính được truy cập hoặc thay đổi.
+
+Đối với các lớp giới hạn phạm vi (package-private hoặc private nested class)
+Đối với các lớp có phạm vi giới hạn, như package-private hoặc private nested class, việc để lộ trực tiếp các thuộc tính ít gây rủi ro hơn. Vì các lớp này chỉ được sử dụng trong một phạm vi hạn chế, nguy cơ từ việc truy cập trực tiếp vào các thuộc tính cũng giảm đi. Trong trường hợp này, việc truy cập trực tiếp có thể giúp mã nguồn gọn gàng hơn mà không ảnh hưởng đáng kể đến tính đóng gói.
+
+Cân nhắc về thiết kế
+Mặc dù phương thức truy cập giúp kiểm soát cách truy cập vào dữ liệu, việc lạm dụng chúng có thể là dấu hiệu của một thiết kế kém. Nếu dựa quá nhiều vào getter và setter, mã nguồn có thể trở nên mang tính thủ tục (procedural) thay vì hướng đối tượng. Do đó, cần đánh giá xem việc cung cấp các phương thức truy cập có thực sự cần thiết hay không và liệu nó có phù hợp với cách một đối tượng được thiết kế và sử dụng.
+
+Kết luận
+Phương thức truy cập nên được sử dụng một cách hợp lý, tùy thuộc vào phạm vi truy cập và mục tiêu thiết kế của lớp. Trong các lớp công khai, chúng rất quan trọng để duy trì tính đóng gói và khả năng mở rộng. Trong phạm vi hạn chế, như package-private hoặc private nested class, truy cập trực tiếp vào thuộc tính có thể chấp nhận được. Luôn cần đánh giá xem việc sử dụng getter và setter có phù hợp với nguyên tắc thiết kế hướng đối tượng hay không, nhằm đảm bảo mã nguồn dễ bảo trì và phát triển lâu dài.
