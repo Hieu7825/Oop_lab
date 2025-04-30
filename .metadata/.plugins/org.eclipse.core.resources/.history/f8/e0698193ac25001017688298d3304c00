@@ -1,0 +1,34 @@
+package hust.soict.hedspi.aims.screen.manager;
+
+import java.awt.FlowLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+
+public class StoreManagerScreen {
+	private Store store;
+	JPanel createNorth() {
+		JPanel north = new JPanel();
+		north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
+		north.add(createMenuBar());
+		north.add(createHeader());
+		return north;
+	}
+	JMenuBar createMenuBar() {
+		JMenu menu = new JMenu("Options");
+		menu.add(new JMenuItem("View Store"));
+		JMenu smUpdateStore = new JMenu("Update Store");
+		smUpdateStore.add(new JMenuItem("Add Book"));
+		smUpdateStore.add(new JMenuItem("Add CD"));
+		smUpdateStore.add(new JMenuItem("Add DVD"));
+		menu.add(smUpdateStore);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
+		menuBar.add(menu);
+		
+		return menuBar;
+	}
+	
+}
